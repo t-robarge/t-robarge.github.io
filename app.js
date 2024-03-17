@@ -3,3 +3,6 @@ function myfunc(x, y){
     return sum;
     
 }
+function HelloWorld(){
+    alert("Hello World!")
+}
