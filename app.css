@@ -23,5 +23,8 @@ label.logo{
   padding: 50px;
   font-weight: bold;
 }
+nav ul{
+  float: right;
+}
 
 
