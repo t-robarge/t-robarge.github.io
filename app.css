@@ -23,10 +23,5 @@ label.logo{
   padding: 50px;
   font-weight: bold;
 }
-nav ul{
-  float: right;
-  margin-right: 20px;
-}
-nav ul li{
-  display: incline-block;
-}
+
+
