@@ -30,6 +30,7 @@ nav ul{
 nav ul li{
   display: incline-block;
   line-height: 100px;
+  margin: 0 5px;
 }
 
 
