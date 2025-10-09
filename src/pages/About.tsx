@@ -41,7 +41,7 @@ const experience: Experience[] = [
     ],
   },
   {
-    role: "Cook",
+    role: 'Cook',
     org: "Salty's Clam Shack, Westerly, RI",
     dates: '2022 – Present (Seasonal)',
     bullets: [
@@ -56,59 +56,100 @@ const education: Education[] = [
     degree: 'B.S. in Computer Science',
     school: 'University of Connecticut',
     dates: '2022 – 2026 (expected)',
-     gpa: '4.00 / 4.00',
-     minor: 'Mathmatics',
+    gpa: '4.00 / 4.00',
+    minor: 'Mathmatics',
     highlights: [
-       'Dean’s List (all semesters)',
-       'Babbidge Scholar',
-       'Relevant coursework: Algorithms, Systems, Databases, ML',
+      'Dean’s List (all semesters)',
+      'Babbidge Scholar',
+      'Relevant coursework: Algorithms, Systems, Databases, ML',
     ],
   },
-  // Add more entries if needed
 ]
+
+/** ---------- Skill logos (swap to local /public/icons if you prefer) ---------- */
+const skills = {
+  frontend: [
+    { name: 'React',        src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+    { name: 'TypeScript',   src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
+    { name: 'Tailwind',     src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' },
+    { name: 'HTML5',        src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+    { name: 'CSS3',         src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+    { name: 'JavaScript',   src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+  ],
+  backend: [
+    { name: 'Python',       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+    { name: 'Flask',        src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg' },
+    { name: 'Node.js',      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+    { name: 'C++',          src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg' },
+    { name: 'REST',         src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openapi/openapi-original.svg' },
+  ],
+  tools: [
+    { name: 'Git',          src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+    { name: 'GitHub',       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
+    { name: 'Vite',         src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg' },
+    { name: 'NumPy',        src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg' },
+    { name: 'Pandas',       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg' },
+    { name: 'Linux',        src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg' },
+    { name: 'Bash',         src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg' },
+  ],
+}
 
 /** ---------- Page ---------- */
 export default function About() {
   return (
-    <section className="py-16">
+    <section className="py-16 bg-gradient-to-b from-purple-950 via-purple-900 to-indigo-950">
       <Container>
-        {/* Centered About intro */}
-        <div className="min-h-[60vh] grid place-items-center text-center">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl font-semibold tracking-tight">About</h2>
-            <p className="mt-4 text-slate-300">
-              I’m a computer science student focused on refining my skills in data analysis, machine learning, and software development.
-            </p>
+        {/* Centered About intro (matches Projects header style) */}
+        <header className="mb-12 text-center">
+          <h2 className="text-4xl font-extrabold tracking-tight text-violet-300">About</h2>
+          <p className="mt-3 max-w-3xl mx-auto text-violet-200">
+            I’m a computer science student focused on refining my skills in data analysis, machine learning, and software development.
+          </p>
+        </header>
 
-            {/* Skills split into Frontend / Backend / Tools */}
-            <div className="mt-10 grid gap-6 sm:grid-cols-3 text-left">
+        {/* Skills — standout card with glow and logos */}
+        <div className="relative mb-16">
+          <div className="pointer-events-none absolute -inset-1 rounded-3xl bg-gradient-to-r from-fuchsia-600/30 via-violet-500/20 to-indigo-600/30 blur-xl" />
+          <div className="relative rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8">
+            <h3 className="text-xl font-semibold text-violet-200 mb-4 text-center">Skills</h3>
+
+            <div className="grid gap-6 sm:grid-cols-3">
+              {/* Frontend */}
               <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                <h3 className="mb-3 text-lg font-semibold">Frontend</h3>
-                <ul className="space-y-1 text-slate-300 text-sm">
-                  <li>React</li>
-                  <li>TypeScript</li>
-                  <li>Tailwind CSS</li>
-                  <li>HTML • CSS • JavaScript</li>
+                <h4 className="mb-3 text-lg font-semibold text-violet-200">Frontend</h4>
+                <ul className="grid grid-cols-2 gap-3">
+                  {skills.frontend.map(s => (
+                    <li key={s.name} className="flex items-center gap-2 text-slate-200">
+                      <img src={s.src} alt={s.name} className="size-5" />
+                      <span className="text-sm">{s.name}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
+              {/* Backend */}
               <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                <h3 className="mb-3 text-lg font-semibold">Backend</h3>
-                <ul className="space-y-1 text-slate-300 text-sm">
-                  <li>Python • Flask</li>
-                  <li>Node basics</li>
-                  <li>REST APIs</li>
-                  <li>C++</li>
+                <h4 className="mb-3 text-lg font-semibold text-violet-200">Backend</h4>
+                <ul className="grid grid-cols-2 gap-3">
+                  {skills.backend.map(s => (
+                    <li key={s.name} className="flex items-center gap-2 text-slate-200">
+                      <img src={s.src} alt={s.name} className="size-5" />
+                      <span className="text-sm">{s.name}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
+              {/* Tools */}
               <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                <h3 className="mb-3 text-lg font-semibold">Tools</h3>
-                <ul className="space-y-1 text-slate-300 text-sm">
-                  <li>Git • GitHub</li>
-                  <li>Vite</li>
-                  <li>scikit-learn • NumPy • Pandas</li>
-                  <li>Linux • Bash</li>
+                <h4 className="mb-3 text-lg font-semibold text-violet-200">Tools</h4>
+                <ul className="grid grid-cols-2 gap-3">
+                  {skills.tools.map(s => (
+                    <li key={s.name} className="flex items-center gap-2 text-slate-200">
+                      <img src={s.src} alt={s.name} className="size-5" />
+                      <span className="text-sm">{s.name}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -116,8 +157,8 @@ export default function About() {
         </div>
 
         {/* Education */}
-        <div className="mt-16">
-          <h3 className="text-2xl font-semibold tracking-tight">Education</h3>
+        <div className="mt-12">
+          <h3 className="text-2xl font-semibold tracking-tight text-violet-200">Education</h3>
           <ol className="mt-6 space-y-6">
             {education.map((ed) => (
               <li key={`${ed.school}-${ed.degree}`} className="rounded-2xl border border-white/10 bg-white/5 p-6">
@@ -132,7 +173,7 @@ export default function About() {
                   <p className="text-sm text-slate-400">{ed.dates}</p>
                 </div>
 
-                {(ed.gpa || (ed.highlights && ed.highlights.length > 0)) && (
+                {(ed.gpa || (ed.highlights && ed.highlights.length > 0) || ed.minor) && (
                   <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-300 text-sm">
                     {ed.gpa && <li><strong>GPA:</strong> {ed.gpa}</li>}
                     {ed.highlights?.map((h, i) => <li key={i}>{h}</li>)}
@@ -146,7 +187,7 @@ export default function About() {
 
         {/* Work Experience */}
         <div className="mt-16">
-          <h3 className="text-2xl font-semibold tracking-tight">Work Experience</h3>
+          <h3 className="text-2xl font-semibold tracking-tight text-violet-200">Work Experience</h3>
           <ol className="mt-6 space-y-6">
             {experience.map((e) => (
               <li key={e.role} className="rounded-2xl border border-white/10 bg-white/5 p-6">
