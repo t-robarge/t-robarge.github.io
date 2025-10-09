@@ -10,13 +10,14 @@ import { ArrowUpRight, Github } from 'lucide-react'
  */
 export default function Projects() {
   return (
-    <section className="py-12">
+    <section className="py-16 bg-gradient-to-b from-[#1b0b2e] via-[#210a3a] to-[#2b0f54]">
       <Container>
-        <header className="mb-10">
-          <h2 className="text-3xl font-semibold tracking-tight">Projects</h2>
-          <p className="mt-2 max-w-2xl text-slate-300">
+        <header className="mb-12 text-center">
+          <h2 className="text-4xl font-extrabold tracking-tight text-violet-300">
+            Projects
+          </h2>
+          <p className="mt-3 max-w-2xl mx-auto text-violet-200">
             Checkout some of my projects displaying the skills I have been refining.
-
           </p>
         </header>
 
@@ -35,24 +36,16 @@ export default function Projects() {
 
                 {/* Media + content */}
                 <div className="grid gap-6 md:grid-cols-5 md:items-start">
-                  {/* Image / placeholder */}
                   <div className="md:col-span-2">
                     <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-800/60">
                       {p.video ? (
-                        // native HTML5 video (mp4/webm in /public/media or imported)
                         <video
                           src={p.video}
-                          // show your image as the poster frame if provided
                           poster={p.image}
                           controls
                           playsInline
                           preload="metadata"
-                          // keep the same aspect behavior as your image
                           className="aspect-video w-full h-auto"
-                          // respect reduced motion
-                          // autoPlay and loop are often annoying in grids, so leave off by default
-                          // muted
-                          // loop
                         />
                       ) : p.image ? (
                         <img
@@ -62,16 +55,14 @@ export default function Projects() {
                           loading="lazy"
                         />
                       ) : (
-                        <div className="aspect-video bg-[radial-gradient(40%_40%_at_50%_0%,rgba(99,102,241,0.25),transparent_70%)]" />
+                        <div className="aspect-video bg-[radial-gradient(40%_40%_at_50%_0%,rgba(139,92,246,0.25),transparent_70%)]" />
                       )}
                     </div>
                   </div>
 
-                  {/* Details */}
                   <div className="md:col-span-3">
                     <p className="text-slate-300">{p.description}</p>
 
-                    {/* Tech chips */}
                     {p.tech?.length > 0 && (
                       <ul className="mt-4 flex flex-wrap gap-2">
                         {p.tech.map((t) => (
@@ -85,7 +76,6 @@ export default function Projects() {
                       </ul>
                     )}
 
-                    {/* Links */}
                     {(p.links?.demo || p.links?.repo) && (
                       <div className="mt-6 flex flex-wrap gap-3 text-sm">
                         {p.links?.demo && (
@@ -93,7 +83,7 @@ export default function Projects() {
                             href={p.links.demo}
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-flex items-center gap-1 rounded-xl bg-accent-500 px-3 py-2 font-medium text-white transition-colors hover:bg-accent-600"
+                            className="inline-flex items-center gap-1 rounded-xl bg-violet-600 px-3 py-2 font-medium text-white transition-colors hover:bg-violet-500"
                           >
                             Live Demo <ArrowUpRight className="h-4 w-4" />
                           </a>
