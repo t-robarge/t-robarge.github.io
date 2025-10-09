@@ -1,0 +1,49 @@
+name: Deploy static site to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]      # deploy on push to main
+  workflow_dispatch:         # allow manual runs
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      # Add SPA fallback (so refresh/deep links work)
+      - name: Add 404.html for SPA
+        run: |
+          if [ -d dist ]; then cp dist/index.html dist/404.html; fi
+
+      # Upload the build output to Pages
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
