@@ -97,7 +97,7 @@ const skills = {
 /** ---------- Page ---------- */
 export default function About() {
   return (
-    <section className="py-16 bg-gradient-to-b from-purple-950 via-purple-900 to-indigo-950">
+    <section className="bg-gradient-to-b from-[#12061f] via-[#18062c] to-[#220940]">
       <Container>
         {/* Centered About intro (matches Projects header style) */}
         <header className="mb-12 text-center">
