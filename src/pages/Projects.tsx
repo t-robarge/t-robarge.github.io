@@ -10,7 +10,7 @@ import { ArrowUpRight, Github } from 'lucide-react'
  */
 export default function Projects() {
   return (
-    <section className="py-16 bg-gradient-to-b from-[#1b0b2e] via-[#210a3a] to-[#2b0f54]">
+   <section className="py-16 bg-gradient-to-b from-purple-950 via-purple-900 to-indigo-950">
       <Container>
         <header className="mb-12 text-center">
           <h2 className="text-4xl font-extrabold tracking-tight text-violet-300">
