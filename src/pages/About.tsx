@@ -109,7 +109,7 @@ export default function About() {
 
         {/* Skills — standout card with glow and logos */}
         <div className="relative mb-16">
-          <div className="pointer-events-none absolute -inset-1 rounded-3xl bg-gradient-to-r from-fuchsia-600/30 via-violet-500/20 to-indigo-600/30 blur-xl" />
+          <div className="pointer-events-none absolute -inset-1 rounded-3xl bg-gradient-to-r from-fuchsia-600/30 via-violet-500/20 to-indigo-600/30" />
           <div className="relative rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8">
             <h3 className="text-xl font-semibold text-violet-200 mb-4 text-center">Skills</h3>
 
