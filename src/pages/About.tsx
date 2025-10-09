@@ -101,7 +101,7 @@ export default function About() {
       <Container>
         {/* Centered About intro (matches Projects header style) */}
         <header className="mb-12 text-center">
-          <h2 className="text-4xl font-extrabold tracking-tight text-violet-300">About</h2>
+          <h2 className="text-4xl font-extrabold tracking-tight text-violet-300">About Me</h2>
           <p className="mt-3 max-w-3xl mx-auto text-violet-200">
             I’m a computer science student focused on refining my skills in data analysis, machine learning, and software development.
           </p>
