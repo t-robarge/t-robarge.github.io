@@ -7,7 +7,7 @@ return (
 <footer className="border-t border-white/10 py-8">
 <Container>
 <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-<p className="text-sm text-slate-400">© {new Date().getFullYear()} Tim Robarge. All rights reserved.</p>
+<p className="text-sm text-slate-400">© {new Date().getFullYear()}</p>
 <div className="flex items-center gap-3 text-slate-300">
 <a className="rounded-lg p-2 hover:bg-white/5 hover:text-white" href="https://github.com/t-robarge" target="_blank" rel="noreferrer" aria-label="GitHub">
 <Github className="h-5 w-5" />
