@@ -17,7 +17,7 @@ return (
 <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur">
 <Container>
 <div className="flex h-16 items-center justify-between">
-<Link to="/" className="font-semibold tracking-tight text-white">Portfolio</Link>
+<Link to="/" className="font-semibold tracking-tight text-white">Tim Robarge</Link>
 
 
 <nav className="hidden items-center gap-1 md:flex">
