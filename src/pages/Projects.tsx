@@ -12,12 +12,11 @@ export default function Projects() {
     <section
       className="
         bg-gradient-to-b from-[#12061f] via-[#18062c] to-[#220940]
-        pt-20 md:pt-28
-        pb-24 md:pb-32
+        section-y
       "
     >
       <Container>
-        <header className="mb-12 md:mb-16 text-center">
+        <header className="header-stack text-center">
           <h2 className="text-4xl font-extrabold tracking-tight text-violet-300">
             Projects
           </h2>
@@ -27,13 +26,13 @@ export default function Projects() {
         </header>
 
         {/* One-by-one vertical layout */}
-        <ol className="space-y-12 md:space-y-16">
+        <ol className="stack">
           {projects.map((p, idx) => (
             <li key={p.title} className="scroll-mt-24">
               <article
                 className="
                   rounded-3xl border border-white/10 bg-white/5
-                  p-6 sm:p-8 md:p-10
+                  card-pad
                   shadow-sm transition-colors hover:bg-white/[0.07]
                 "
               >

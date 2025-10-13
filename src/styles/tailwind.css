@@ -6,3 +6,10 @@
 :root { color-scheme: dark; }
 html { scroll-behavior: smooth; }
 *:focus-visible { outline: 2px solid theme('colors.accent.500'); outline-offset: 2px; }
+
+@layer utilities {
+  .section-y { @apply pt-20 md:pt-28 pb-24 md:pb-32; }
+  .stack { @apply space-y-12 md:space-y-16; }
+  .card-pad { @apply p-6 sm:p-8 md:p-10; }
+  .header-stack { @apply mb-12 md:mb-16; }
+}
