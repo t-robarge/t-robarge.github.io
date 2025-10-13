@@ -3,16 +3,21 @@ import { projects } from '../data/projects'
 import { ArrowUpRight, Github } from 'lucide-react'
 
 /**
- * Vertically stacked project sections.
- * - Each project is a full-width card with generous spacing.
- * - Image (if provided) sits on top for mobile, alongside content on larger screens.
- * - Subtle borders/backgrounds keep it minimal and modern.
+ * Vertically stacked project sections with generous page padding.
+ * - Top/bottom page padding via py to avoid crowding the viewport edges.
+ * - Larger gaps between list items on md+.
  */
 export default function Projects() {
   return (
-   <section className="bg-gradient-to-b from-[#12061f] via-[#18062c] to-[#220940]">
+    <section
+      className="
+        bg-gradient-to-b from-[#12061f] via-[#18062c] to-[#220940]
+        pt-20 md:pt-28
+        pb-24 md:pb-32
+      "
+    >
       <Container>
-        <header className="mb-12 text-center">
+        <header className="mb-12 md:mb-16 text-center">
           <h2 className="text-4xl font-extrabold tracking-tight text-violet-300">
             Projects
           </h2>
@@ -22,12 +27,18 @@ export default function Projects() {
         </header>
 
         {/* One-by-one vertical layout */}
-        <ol className="space-y-10">
+        <ol className="space-y-12 md:space-y-16">
           {projects.map((p, idx) => (
             <li key={p.title} className="scroll-mt-24">
-              <article className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-sm transition-colors hover:bg-white/[0.07] sm:p-8">
+              <article
+                className="
+                  rounded-3xl border border-white/10 bg-white/5
+                  p-6 sm:p-8 md:p-10
+                  shadow-sm transition-colors hover:bg-white/[0.07]
+                "
+              >
                 {/* Top row: index + title */}
-                <div className="mb-4 flex items-baseline gap-3">
+                <div className="mb-5 md:mb-6 flex items-baseline gap-3">
                   <span className="inline-flex h-8 min-w-8 items-center justify-center rounded-full bg-white/10 px-2 text-sm font-medium text-slate-300">
                     {String(idx + 1).padStart(2, '0')}
                   </span>
@@ -35,7 +46,7 @@ export default function Projects() {
                 </div>
 
                 {/* Media + content */}
-                <div className="grid gap-6 md:grid-cols-5 md:items-start">
+                <div className="grid gap-6 md:grid-cols-5 md:gap-8 md:items-start">
                   <div className="md:col-span-2">
                     <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-800/60">
                       {p.video ? (
