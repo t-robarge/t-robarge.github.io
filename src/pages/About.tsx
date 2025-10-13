@@ -99,10 +99,11 @@ const skills = {
 /** ---------- Page ---------- */
 export default function About() {
   return (
-    <section className="bg-gradient-to-b from-[#12061f] via-[#18062c] to-[#220940]">
+    <section className="bg-gradient-to-b from-[#12061f] via-[#18062c] to-[#220940]
+      section-y">
       <Container>
         {/* Centered About intro (matches Projects header style) */}
-        <header className="mb-12 text-center">
+        <header className="header-stack text-center">
           <h2 className="text-4xl font-extrabold tracking-tight text-violet-300">About Me</h2>
           <p className="mt-3 max-w-3xl mx-auto text-violet-200">
             I’m a computer science student focused on refining my skills in data analysis, machine learning, and software development.
@@ -190,7 +191,7 @@ export default function About() {
         {/* Work Experience */}
         <div className="mt-16">
           <h3 className="text-2xl font-semibold tracking-tight text-violet-200">Work Experience</h3>
-          <ol className="mt-6 space-y-6">
+          <ol className="stack">
             {experience.map((e) => (
               <li key={e.role} className="rounded-2xl border border-white/10 bg-white/5 p-6">
                 <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
