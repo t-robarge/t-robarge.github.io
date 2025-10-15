@@ -12,7 +12,7 @@ export type Project = {
     {
       title: 'AI-Assisted Quick Advisor Application',
       description:
-        'LLM assistant with Retrieval-Augmented Generation; Flask API with a React UI for real-time querying and responses.',
+        'LLM assistant with Retrieval-Augmented Generation; Flask API with a Modern UI for real-time querying and responses.',
       tech: ['Python', 'Flask', 'LLMs', 'RAG', 'TypeScript'],
       links: { repo: 'https://github.com/t-robarge' }, // replace with repo if you publish it
       video: '/media/QuickAdvisorDemo.mov'
