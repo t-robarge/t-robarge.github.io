@@ -191,7 +191,7 @@ export default function About() {
 
         {/* Work Experience */}
         <div className="mt-16">
-          <h3 className="text-2xl font-semibold tracking-tight text-violet-200">Work Experience</h3>
+          <h3 className="text-2xl font-semibold tracking-tight mt-6 text-violet-200">Work Experience</h3>
           <ol className="stack">
             {experience.map((e) => (
               <li key={e.role} className="rounded-2xl border border-white/10 bg-white/5 p-6">
