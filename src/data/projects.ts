@@ -57,5 +57,12 @@ export type Project = {
       links: { repo: 'https://github.com/t-robarge' },
       image: '/media/FruitFreshnessResults.png',
     },
+    {
+      title: "PLM Automation Simulator",
+      description: "A lightweight PLM-style parts management system built in Java with Javalin. It exposes a clean REST API for creating, updating, and querying parts data, mirroring real-world engineering workflows and laying the groundwork for future automation features.",
+      tech: ['Java','Javalin','SQLite','Maven'],
+      links: {repo: 'https://github.com/t-robarge'},
+      image: '/media/plm-screenshot.png',
+    }
   ]
   
