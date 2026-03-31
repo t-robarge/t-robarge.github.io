@@ -8,7 +8,7 @@ on:
 
 jobs:
   review:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     permissions:
       pull_request: write
       contents: read
