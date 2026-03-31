@@ -4,14 +4,13 @@ on:
   pull_request:
     branches: [ main ]  
     types: [opened,synchronize]    # trigger on PRs to main
-  workflow_dispatch:  
   
 
 jobs:
   review:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     permissions:
-      pull_request: write
+      pull-requests: write
       contents: read
     steps:
 
